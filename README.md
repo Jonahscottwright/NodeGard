@@ -23,6 +23,7 @@
   <a href="#usage">Usage</a> •
   <a href="#tests">Tests</a> •
   <a href="#contribution">Contribution</a> •
+  <a href="#built-with">Built With</a> •
   <a href="#license">License</a>
 </p>
 
@@ -204,6 +205,12 @@ $ npm test
   explain what your patch does, and why it is needed.
 * Keep it simple: Any patch that changes a lot of code or is difficult to
   understand should be discussed before you put in the effort.
+
+## Built With
+
+* [dotenv](https://www.npmjs.com/package/dotenv)^6.1.0 - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+* [express](https://www.npmjs.com/package/express)^4.16.4 - Fast, unopinionated, minimalist web framework for node
+* [jest](https://www.npmjs.com/package/jest)^23.6.0 - Delightful JavaScript Testing
 
 ## Members
 
