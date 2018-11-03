@@ -12,6 +12,12 @@
   <a href="https://forthebadge.com">
       <img src="https://forthebadge.com/images/badges/powered-by-water.svg">
   </a>
+  <a href="https://github.com/Leafgard/NodeGard/issues">
+      <img src="https://img.shields.io/github/issues/Leafgard/NodeGard.svg?style=for-the-badge">
+  </a>
+  <a href="https://github.com/Leafgard/NodeGard/stargazers">
+      <img src="https://img.shields.io/github/stars/Leafgard/NodeGard.svg?style=for-the-badge">
+  </a>
   <a href="https://paypal.me/Leafgard">
     <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=for-the-badge">
   </a>
