@@ -27,7 +27,7 @@
   <a href="#key-features">Key Features</a> •
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
-  <a href="#tests">Tests</a> •
+  <a href="#tests">Testing</a> •
   <a href="#contribution">Contribution</a> •
   <a href="#built-with">Built With</a> •
   <a href="#license">License</a>
@@ -35,13 +35,13 @@
 
 ## Key Features
 
-* Ability to choose for single/multi-core application
+* Ability to choose between single and multi-core applications
 * Works with separated modules
-* Globally declared modules for inter-modules communication (Ex: WebServer -> Database)
+* Globally declared modules for inter-module communication (Ex: WebServer -> Database)
 * .ENV configuration ready
 * Pre-installed ExpressJS webserver
 * Loading, preparing and running phases
-* Easy to adapt modules
+* Easy-to-adapt modules
 
 ## Installation
 
@@ -49,9 +49,9 @@
 $ git clone https://github.com/Leafgard/NodeGard.git yourProjectName
 ```
 
-### Update the `package.json`
+### Updating `package.json`
 
-Update the `package.json` with your own informations.
+Update `package.json` with your own information.
 
 ```diff
 - "name": "nodegard",
@@ -89,18 +89,18 @@ Update the `package.json` with your own informations.
 
 ## Usage
 
-### Configure the application in `config.js` file
+### Configuring the application in `config.js`
 
-#### Add a module to application:
+#### Adding a module to the application:
 
-By default, application is running with the built-in WebServer.
+By default, the application runs using the built-in WebServer.
 
 ```js
 /**
  * All the modules should be declared here.
  * NB: Application won't run if empty !
  * 
- * WebServer is here already declared.
+ * WebServer is already declared here.
  * It's the built-in webserver provided by the framework.
  */
   module.exports.Modules = {
@@ -108,7 +108,7 @@ By default, application is running with the built-in WebServer.
   }
 ```
 
-You just have to add your own modules like that:
+You just have to add your own modules like this:
 
 ```diff
   module.exports.Modules = {
@@ -118,40 +118,41 @@ You just have to add your own modules like that:
   }
 ```
 
-`myModule` is the keyname to call in your whole application through all your modules.
+`myModule` is the keyname you can call throughout the whole application from all of your modules.
 
-For example, if you have a `Database` module and you want to call one of his function, you may just:
+For example, if you have a `Database` module and you want to call one of its functions, you can just:
 
-`Database.callMyFunction()` from anywhere in the app ! It will work !
+`Database.callMyFunction()` from anywhere in the app! And it will work, just like that!
 
-`require('./src/Modules/..')` is the location to your module folder.
+`require('./src/Modules/..')` is the directory of your modules folder.
 
-#### Single/Multi-Cores application
+#### Single/Multi-Core applications
 
-By default, application in running in single-core.
+By default, applications will only run on a single core.
 
 ```js
 /**
- * Ability to run on multiple cores or not:
+ * Ability to run on multiple cores:
  * true = Uses multiple cores
  * false = Uses only one core
  */
   module.exports.useMultipleCores = false
 ```
+In order to allow your application to make use of multiple cores, you must set `module.exports.useMultipleCores` to `true`.
 
-### Create a module
+### Creating a module
 
 This framework is based on modules.
 
-All your modules should be located at `./src/Modules/YourModule/index.js` (Each module has his own directory).
+All of your modules should be located in `./src/Modules/YourModule/index.js` (Each module has its own directory).
 
-All modules should have this architecture:
+All modules should have this syntax:
 
 ```js
   module.exports = new ( class yourModule {
 
     /**
-     * (Requires the packages and) Instanciate the main components and variables
+     * (Requires the packages and) Instantiate the main components and variables
      */
     constructor() {
       const express = require('express')
@@ -161,7 +162,7 @@ All modules should have this architecture:
     }
 
     /**
-     * Prepares the module to be runned (Settings, routes, etc..)
+     * Prepares the module to be run (Settings, routes, etc..)
      * @returns {Promise} Resolve = module prepared, reject = problem while preparing module
      */
     prepare() {
@@ -187,15 +188,15 @@ All modules should have this architecture:
   } )
 ```
 
-You **absolutely** need the `prepare()` and `run()` functions, and the `prepare()` function should return a *Promise* !
+You **absolutely** need the `prepare()` and `run()` functions, and the `prepare()` function must return a *Promise*!
 
-If there is a problem during `prepare()`, return `reject`, else return `resolve`.
+If there is a problem during `prepare()`, return `reject`, or else return `resolve`.
 
-This *prevent* application to run without everything working.
+This *prevents* the application from running without everything working properly.
 
-## Tests
+## Testing
 
-Create your tests (using JEST) in `./tests` and run:
+Create tests (using JEST) in `./tests` and run:
 
 ```bash
 $ npm test
@@ -203,10 +204,10 @@ $ npm test
 
 ## Contribution
 
-* Fork the repository, use the development branch and please pull requests to contribute to this project.
+* Fork the repository, use the development branch and please create pull requests to contribute to this project.
 * Follow the same coding style as used in the project. Pay attention to the
-  usage of tabs, spaces, newlines and brackets. Try to copy the aesthetics the
-  best you can.
+  usage of tabs, spaces, newlines and brackets. Try to copy the aesthetics as
+  best as you can.
 * Write [good commit messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html),
   explain what your patch does, and why it is needed.
 * Keep it simple: Any patch that changes a lot of code or is difficult to
